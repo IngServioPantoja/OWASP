@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<!-- Custom theme -->
+	<f:facet name="first">
+		<link href="/owasp/resources/css/normalize.css" rel="stylesheet"
+			type="text/css" />
+	</f:facet>
+	<link href="/owasp/resources/css/style.css" rel="stylesheet"
+		type="text/css" />
+</h:head>
+<h:body>
+	<div class="contenedor">
+		<p:growl globalOnly="true" autoUpdate="true" sticky="true" showDetail="true"></p:growl>
+		<ui:insert name="header">
+			<ui:include src="commonHeader.xhtml" />
+		</ui:insert>
+		<ui:insert name="menu">
+			<ui:include src="commonMenu.xhtml" />
+		</ui:insert>
+
+		<ui:insert name="content">
+			<ui:include src="commonContent.xhtml" />
+		</ui:insert>
+
+		<ui:insert name="footer">
+			<ui:include src="commonFooter.xhtml" />
+		</ui:insert>
+	</div>
+	<script type='text/javascript' src='/owasp/resources/js/jquery-2.1.4.min.js'></script>
+	<script>
+	var  mn = $("#menu");
+    mns = "menuFixed";
+    hdr = $('header').height();
+	console.log(hdr);
+	$(window).scroll(function() {
+	  if( $(this).scrollTop() > hdr ) {
+	    mn.addClass(mns);
+		console.log("addClass");
+	  } else {
+	    mn.removeClass(mns);
+		console.log("removeClass");
+	  }
+	});
+	</script>
+</h:body>
+</html>

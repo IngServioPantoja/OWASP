@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+	<ui:composition template="/WEB-INF/template/commonLayout.xhtml">
+		<ui:define name="content">
+			<h:form>
+				<div class="ui-grid ui-grid-responsive">
+					<div class="ui-grid-row">
+						<div class="ui-grid-col-12">
+							<div class="contenedorLogin">
+								<div class="cabecera">
+									Iniciar Sesión Seguro
+								</div>
+								<p:spacer/>
+								<div>
+									Usuario:
+								</div>
+								<div>
+									<p:inputText value="#{loginBean.username}"/>
+								</div>
+								<div>
+									Contraseña:
+								</div>
+								<div>
+									<p:password value="#{loginBean.password}"></p:password>
+								</div>
+								<p:spacer/>
+								<div>
+									<p:commandButton action="#{loginBean.validarIngresoSeguro()}" value="Ingresar"></p:commandButton>
+								</div>
+								<p:spacer/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
